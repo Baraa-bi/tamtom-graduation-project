@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringApp {
 
     public static void main(String[] args) {
+        //example to push something
         SpringApplication.run(SpringApp.class,args);
     }
 }
