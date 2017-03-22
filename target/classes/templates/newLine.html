@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <style>
+        body,input{font-size:30px;}
+        input{margin:10px;}
+         td,table{
+         border-style:solid;
+          border-collapse:collapse;
+            }
+</style>
+</head>
+<body>
+
+
+<form action="/createLine" method="post">
+    <h4>all data are separated by a comma ex lat,lng,lat,lng..etc</h4>
+    <table>
+            <tr><td> line start : </td>
+            <td><input type="text" placeholder="line start" name="lineStart"/></td></tr>
+
+        <tr><td> line end : </td>
+            <td><input type="text" placeholder="line end" name="lineEnd"/></td></tr>
+
+        <tr><td> way points : </td>
+            <td><input type="text" placeholder="way points" name="wayPoints"/></td></tr>
+
+
+
+        <tr><td colspan="2"><input type="submit" value="submit"/></td></tr>
+
+    </table>
+
+</form>
+
+
+</body>
+</html>
