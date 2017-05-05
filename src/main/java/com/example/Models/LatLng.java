@@ -1,6 +1,8 @@
 package com.example.Models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * Created by baraa on 2/28/2017.
@@ -15,11 +17,14 @@ public class LatLng {
     private double longitude;
     private double latitude;
     private long lineId;
+    private boolean isStop;
 
-    public LatLng(double longitude, double latitude, long lineId) {
+
+    public LatLng(double latitude, double longitude, long lineId, boolean isStop) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.lineId = lineId;
+        this.isStop = isStop;
     }
 
     public LatLng(){}
@@ -56,5 +61,13 @@ public class LatLng {
 
     public void setLineId(long lineId) {
         this.lineId = lineId;
+    }
+
+    public boolean isStop() {
+        return isStop;
+    }
+
+    public void setStop(boolean stop) {
+        isStop = stop;
     }
 }

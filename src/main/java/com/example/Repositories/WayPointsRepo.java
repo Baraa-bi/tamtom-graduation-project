@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface WayPointsRepo extends CrudRepository<LatLng,Long> {
     List<LatLng> findByLineId(Long lineId);
+    List<LatLng> deleteByLineIdAndIsStop(Long lineId,boolean isStop);
+
 }

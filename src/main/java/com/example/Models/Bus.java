@@ -1,8 +1,10 @@
 package com.example.Models;
 
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * Created by baraa on 2/15/2017.
@@ -14,13 +16,22 @@ public class Bus {
     @Id
     @GeneratedValue
     Long busId;
-    String image;
+    @Column(unique = true,nullable = false)
+    String plateNo;
+    Long lineId;
+    Long driverId;
     String status;
-    String currentLocation;
-    long lineId;
-    long driverId;
 
-public Bus(){}
+
+
+    public Bus(String plateNo, Long lineId, Long driverId, String status) {
+        this.plateNo = plateNo;
+        this.lineId = lineId;
+        this.driverId = driverId;
+        this.status = status;
+    }
+    public Bus(){}
+
     public Long getBusId() {
         return busId;
     }
@@ -29,20 +40,21 @@ public Bus(){}
         this.busId = busId;
     }
 
-    public long getDriverId() {
+    public Long getDriverId() {
         return driverId;
     }
 
-    public void setDriverId(long driverId) {
+    public void setDriverId(Long driverId) {
         this.driverId = driverId;
     }
 
-    public String getImage() {
-        return image;
+
+    public Long getLineId() {
+        return lineId;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setLineId(Long lineId) {
+        this.lineId = lineId;
     }
 
     public String getStatus() {
@@ -53,19 +65,11 @@ public Bus(){}
         this.status = status;
     }
 
-    public String getCurrentLocation() {
-        return currentLocation;
+    public String getPlateNo() {
+        return plateNo;
     }
 
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
-    }
-
-    public long getLineId() {
-        return lineId;
-    }
-
-    public void setLineId(long lineId) {
-        this.lineId = lineId;
+    public void setPlateNo(String plateNo) {
+        this.plateNo = plateNo;
     }
 }
