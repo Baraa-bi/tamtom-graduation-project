@@ -167,11 +167,6 @@ public class UserController {
                 user.setFavoriteIds(lineId+",");
             else
                 user.setFavoriteIds(user.getFavoriteIds()+lineId+",");
-
-            user.setFavoriteIds(user.getFavoriteIds().substring(0,user.getFavoriteIds().length()-1));
-            HashSet<String> mySet = new HashSet<String>(Arrays.asList(user.getFavoriteIds().split(",")));
-            String favorite = mySet.toString();
-            user.setFavoriteIds(favorite.substring(1,favorite.length()-1));
             userRepo.save(user);
             response.sendRedirect("/getUser?userId="+userId);
         }
