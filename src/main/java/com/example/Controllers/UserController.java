@@ -174,7 +174,7 @@ public class UserController {
                 user.setFavoriteIds(null);
             else {
                 String[] ar = user.getFavoriteIds().split(",");
-                String favorite = null;
+                String favorite = "";
                 for (int i = 0; i < ar.length; i++) {
                     if (String.valueOf(lineId).equals(ar[i]))
                         continue;
